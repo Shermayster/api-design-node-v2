@@ -1,10 +1,12 @@
-import http from 'http'
-import { createServer } from 'http'
+// import http from 'http'
+// import { createServer } from 'http'
 
-import app from './server'
+import app from './server';
 let currentApp = app
 
-
+app.listen(3000, () => {
+  console.log('localhost 3000');
+})
 if (module.hot) {
 	module.hot.accept(['./server'], () => {
 		server.removeListener('request', currentApp)
